@@ -88,10 +88,7 @@ namespace VierGewinnt
             }
             return false;
         }
-        /// <summary>
-        /// Makes the Current Player in the Parameter do his Next Move
-        /// </summary>
-        /// <param name="player"></param>
+        
         public static void MakeTurn(Player player)
         {
             Console.WriteLine($"{player.PlayerName}: Bitte Schreibe eine Buchstaben Reihe.");
@@ -105,38 +102,7 @@ namespace VierGewinnt
             char Row = Input[0];
             AddField(Row, player);
 
-            // Wenn man das Spielfeld mit den Pfeiltasten steuern will, dann benutzt man das folgende, benötigte sachen sind über die datei verteilt.
-            //do
-            //{
-            //    if (Console.ReadKey().Key == ConsoleKey.LeftArrow)
-            //    {
-            //        if (Essentials.CursorPosition[0] != ' ') continue;
-            //        for (int i = 1; i < Essentials.CursorPosition.Count; i++)
-            //        {
-            //            if (Essentials.CursorPosition[i] == 'X')
-            //            {
-            //                Essentials.CursorPosition[i] = ' ';
-            //                Essentials.CursorPosition[i -  1] = 'X';
-            //                break;
-            //            }
-            //        }
-            //    }
-            //    if (Console.ReadKey().Key == ConsoleKey.RightArrow)
-            //    {
-            //        if (Essentials.CursorPosition[6] != ' ') continue;
-            //        for (int i = 0; i < Essentials.CursorPosition.Count - 1; i++)
-            //        {
-            //            if (Essentials.CursorPosition[i] == 'X')
-            //            {
-            //                Essentials.CursorPosition[i] = ' ';
-            //                Essentials.CursorPosition[i + 1] = 'X';
-            //                break;
-            //            }
-            //        }
-            //    }
-
-            //    Helper.DrawField();
-            //} while (Console.ReadKey().Key != ConsoleKey.Enter);
+            
         }
         
         public static void AddField(char Letter, Player player)
@@ -184,14 +150,6 @@ namespace VierGewinnt
         public static void DrawField()
         {
             Console.Clear();
-            // Preiltasten Draw
-            //Console.ForegroundColor = ConsoleColor.Magenta;
-            //Console.Write("   ");
-            //foreach(char Cursor in Essentials.CursorPosition)
-            //{
-            //    Console.Write($"  {Cursor} ");
-            //}
-            //Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write("   ");
             foreach (char letter in Essentials.Letters)
@@ -244,8 +202,6 @@ namespace VierGewinnt
         public static List<char> Letters = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
         public static List<List<string>> AvailableFields = new List<List<string>>();
 
-        // Pfeiltasten Cursor speicher
-        //public static List<char> CursorPosition = new List<char> { 'X', ' ', ' ', ' ', ' ', ' ', ' ' };
     }
     public enum Field
     {
